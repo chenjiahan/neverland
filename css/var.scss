@@ -1,0 +1,55 @@
+@mixin transition($time,$type) {
+  -webkit-transition: all $time $type;
+       -o-transition: all $time $type;
+          transition: all $time $type;
+}
+@mixin transform-rotate($angle) {
+  -webkit-transform: rotate($angle);
+      -ms-transform: rotate($angle);
+       -o-transform: rotate($angle);
+          transform: rotate($angle);
+}
+@mixin transform-scale($value) {
+  -webkit-transform: scale($value);
+      -ms-transform: scale($value);
+       -o-transform: scale($value);
+          transform: scale($value);
+}
+@mixin transform($value) {
+  -webkit-transform: $value;
+      -ms-transform: $value;
+       -o-transform: $value;
+          transform: $value;
+}
+@mixin box-shadow($h-shadow,$v-shadow,$blur,$spread,$color) {
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+          box-shadow: $h-shadow $v-shadow $blur $spread $color;
+}
+@mixin background-cover($name) {
+  background: url("http://nland-images.stor.sinaapp.com/" + $name + ".jpg") no-repeat center;
+  background-size: cover;
+  @media (max-width: 768px) {
+    background: url("http://nland-images.stor.sinaapp.com/" + $name + "_s.jpg") no-repeat center;
+    background-size: cover;
+  }
+}
+@mixin animation($value) {
+  -webkit-animation: $value;
+     -moz-animation: $value;
+       -o-animation: $value;
+          animation: $value;
+}
+@mixin keyframes($name){
+  @keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+}
