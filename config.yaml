@@ -18,9 +18,9 @@ handle:
 - compress: if ( out_header["Content-type"] ~ "image/gif" ) compress
 - compress: if ( out_header["Content-type"] ~ "image/bmp" ) compress
 - compress: if ( out_header["Content-type"] ~ "application/x-shockwave-flash" ) compress
-- directoryindex: home.html
+- directoryindex: blog.html
 
 - rewrite: if ( path ~ "blog/" ) goto "/blog.html"
 - rewrite: if ( !is_dir() && !is_file() && path ~ "work" ) goto "/work.html"
-- rewrite: if ( !is_dir() && !is_file() && path ~ "home" ) goto "/home.html"
+- rewrite: if ( !is_dir() && !is_file() && path ~ "about" ) goto "/about.html"
 - rewrite: if ( !is_dir() && !is_file() && path ~ "blogs/(.*)" ) goto "blogs.html?name=$1"
