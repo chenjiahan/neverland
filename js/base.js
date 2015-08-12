@@ -11,16 +11,6 @@ $(document).ready(function(){
   })();
 
   /*
-   *  去除链接的虚线边框
-   *  为了美化IE浏览器的链接点击
-   */
-  $('a').bind('focus', function(){
-    if(this.blur){
-      this.blur();
-    }
-  });
-
-  /*
    *  返回顶部按钮
    *  滚动条的位置处于距顶部100像素以下时，显示按钮
    *  点击按钮后，回到页面顶部位置
@@ -66,6 +56,4 @@ $(document).ready(function(){
       $("html,body").animate({scrollTop:$(".rwd").offset().top-60},400);
     }
   });
-
-
 });
