@@ -1,12 +1,7 @@
-/**
- * Created by chenjiahan on 15/8/13.
- */
 var React  = require("react");
 var Router = require("react-router");
 var Route  = Router.Route;
-
-
-
+var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 
 var App = React.createClass({
@@ -42,11 +37,32 @@ var Inbox = React.createClass({
     }
 });
 
+var Message = React.createClass({
+    getInitialState: function() {
+        return {
+            message: 1
+        }
+    },
+    componentDidMount: function () {
+        var id = this.props.params.id;
+        this.setState({ message: id });
+    },
+    render: function() {
+        return (
+            <div>
+                <h1>{this.state.message}</h1>
+            </div>
+        )
+    }
+});
+
 var routes = (
     <Route handler={App}>
         <DefaultRoute handler={About}/>
         <Route path="about" handler={About}/>
-        <Route path="inbox" handler={Inbox}/>
+        <Route path="inbox" handler={Inbox}>
+            <Route path="messages/:id" handler={Message}/>
+        </Route>
     </Route>
 );
 

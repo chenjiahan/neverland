@@ -1,14 +1,4 @@
 $(document).ready(function(){
-  /*
-   *  百度统计代码
-   */
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?e51b7c7a7c0b5525f94bbfa3307c05ca";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
 
   /*
    *  返回顶部按钮
