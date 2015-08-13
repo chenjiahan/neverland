@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var csso = require('gulp-csso');
-var babel = require('gulp-babel');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
 var uglify = require('gulp-uglify');
 var changed = require('gulp-changed');
+var webpack = require('gulp-webpack');
+var rename = require('gulp-rename');
 
 var paths = {
     scripts: ['src/js/*.js'],
@@ -19,18 +21,19 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('scripts', function () {
-    //编译并压缩src/js目录下的文件,输出到build/js
-    gulp.src('src/js/*.js')
-        .pipe(changed('./build/js'))
+gulp.task('webpack', function () {
+    gulp.src('src/js/index.js')
         .pipe(babel())
+        .pipe(gulp.dest('./build/js'))
+        .pipe(webpack())
         .pipe(uglify())
+        .pipe(rename('index.js'))
         .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch(paths.scripts, ['scripts']);
+    gulp.watch(paths.scripts, ['webpack']);
     gulp.watch(paths.css, ['sass']);
 });
 
-gulp.task('default', ['watch', 'scripts', 'sass']);
+gulp.task('default', ['watch', 'webpack', 'sass']);
