@@ -1,6 +1,14 @@
 module.exports = {
-    entry: "src/js/index.js",
+    entry: "./src/js/index.js",
     output: {
-        filename: "index.js"
+        path: "build",
+        filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            { test: /\.js$/, loader: "babel" },
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.scss$/, loader: "style!css!autoprefixer!sass" }
+        ]
     }
 };

@@ -1,13 +1,18 @@
 var React  = require("react");
 var Router = require("react-router");
+var Header = require('./header');
 var Route  = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
+
+require('../scss/base.scss')
+require('../scss/bootstrap.min.css')
 
 var App = React.createClass({
     render: function() {
         return (
             <div>
+                <Header />
                 <h1>App</h1>
                 <RouteHandler/>
             </div>
@@ -67,5 +72,8 @@ var routes = (
 );
 
 Router.run(routes, Router.HashLocation, (App) => {
-    React.render(<App/>, document.body);
+    React.render(
+        <App/>,
+        document.getElementById('body')
+    );
 });
