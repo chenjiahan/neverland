@@ -1,20 +1,24 @@
+//library
 var React  = require("react");
 var Router = require("react-router");
-var Header = require('./header');
 var Route  = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 
+//css
 require('../scss/base.scss')
 require('../scss/bootstrap.min.css')
+
+//components
+var Header = require('./header');
+var Footer = require('./footer');
 
 var App = React.createClass({
     render: function() {
         return (
             <div>
                 <Header />
-                <h1>App</h1>
-                <RouteHandler/>
+                <Footer />
             </div>
         )
     }
@@ -42,35 +46,18 @@ var Inbox = React.createClass({
     }
 });
 
-var Message = React.createClass({
-    getInitialState: function() {
-        return {
-            message: 1
-        }
-    },
-    componentDidMount: function () {
-        var id = this.props.params.id;
-        this.setState({ message: id });
-    },
-    render: function() {
-        return (
-            <div>
-                <h1>{this.state.message}</h1>
-            </div>
-        )
-    }
-});
-
+//router config
 var routes = (
     <Route handler={App}>
-        <DefaultRoute handler={About}/>
-        <Route path="about" handler={About}/>
-        <Route path="inbox" handler={Inbox}>
-            <Route path="messages/:id" handler={Message}/>
+        <DefaultRoute handler={About} />
+        <Route path="about" handler={About} />
+        <Route path="blog" handler={Inbox} >
+            <Route path="blog/:id" />
         </Route>
     </Route>
 );
 
+//run router
 Router.run(routes, Router.HashLocation, (App) => {
     React.render(
         <App/>,
