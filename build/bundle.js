@@ -18537,7 +18537,6 @@
 	    displayName: 'Page',
 
 	    render: function render() {
-
 	        //style
 	        var height = window.innerHeight;
 	        var style = {
@@ -18567,12 +18566,42 @@
 	        };
 	    },
 	    componentDidMount: function componentDidMount() {
-	        setInterval((function () {
-	            var page = this.state.nowPage % 3 + 1;
-	            this.setState({
-	                nowPage: page
-	            });
-	        }).bind(this), 2000);
+	        //适应屏幕变化
+	        window.addEventListener('resize', (function () {
+	            this.forceUpdate();
+	        }).bind(this));
+
+	        //响应键盘事件
+	        document.onkeydown = (function () {
+	            this.handleKeyDown();
+	        }).bind(this);
+	    },
+	    handleKeyDown: function handleKeyDown() {
+
+	        switch (event.keyCode) {
+	            case 33: //page up
+	            case 38:
+	                //arrow up
+	                this.pageUp();
+	                break;
+	            case 34: //page down
+	            case 40:
+	                //arrow down
+	                this.pageDown();
+	                break;
+	        }
+	    },
+	    pageUp: function pageUp() {
+	        var nowPage = this.state.nowPage;
+	        if (nowPage > 1) {
+	            this.setState({ nowPage: nowPage - 1 });
+	        }
+	    },
+	    pageDown: function pageDown() {
+	        var nowPage = this.state.nowPage;
+	        if (nowPage < 3) {
+	            this.setState({ nowPage: nowPage + 1 });
+	        }
 	    },
 	    render: function render() {
 
