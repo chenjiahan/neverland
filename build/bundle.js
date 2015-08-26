@@ -18535,8 +18535,8 @@
 	        position: "absolute",
 	        width: "100%",
 	        overflow: "hidden",
-	        transition: "all .4s ease-in-out",
-	        WebkitTransition: "all .4s ease-in-out"
+	        transition: "all .4s cubic-bezier(0.86, 0, 0.07, 1)",
+	        WebkitTransition: "all .4s cubic-bezier(0.86, 0, 0.07, 1)"
 	    },
 	    render: function render() {
 	        var height = window.innerHeight;
