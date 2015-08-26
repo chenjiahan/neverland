@@ -108,8 +108,66 @@ var util = {
             }
             return result;
         };
-    }
+    },
 
-}
+    /**
+     * 滚动到指定位置
+     * @param target 滚动目标,高度或element
+     * @param time   滚动时长,默认值为200ms
+     */
+    scroll: function (target, time) {
+        //若target为元素,则获取其与顶部距离
+        if(typeof target.offsetTop === 'number') {
+            target = target.offsetTop
+        }
+
+        time = arguments[1] || 200;                       //滚动时长
+        var offset = document.body.scrollTop;             //滚动条位置
+        var step = Math.abs(offset - target) * 5 / time ; //滚动步长
+
+        //滚动位置不超过底部
+        var clientHeight = document.documentElement.clientHeight;
+        var scrollHeight = document.body.scrollHeight;
+        if(target + clientHeight > scrollHeight) {
+            target = scrollHeight - clientHeight;
+        }
+
+        //定时器
+        var scroll = window.setInterval(function() {
+            if ( target == offset ) {
+                window.clearInterval( scroll );
+            } else if ( offset - target > step ) {
+                offset -= step;
+            } else if ( target - offset > step ) {
+                offset += step;
+            } else {
+                offset = target;
+            }
+            window.scrollTo(0, offset);
+        }, 5);
+    },
+
+    /**
+     * 解析html,返回element
+     * @param str
+     * @returns {HTMLElement[]}
+     */
+    parseHTML: function (str) {
+        var el = document.createElement('div');
+        el.innerHTML = str;
+        return el.children;
+    },
+
+    /**
+     * 获取地址栏URL参数
+     * @param name
+     * @returns result | null
+     */
+    getUrlParam: function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  //构造正则表达式对象
+        var r = decodeURI(window.location.search).substr(1).match(reg);  //匹配目标参数
+        return r === null ? r : r[2];
+    }
+};
 
 module.exports = util;
