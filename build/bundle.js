@@ -50,13 +50,13 @@
 	var React = __webpack_require__(1);
 
 	//css
-	__webpack_require__(208);
+	__webpack_require__(157);
 
 	//components
-	var FullPage = __webpack_require__(205);
+	var FullPage = __webpack_require__(161);
 
 	//render
-	React.render(React.createElement(FullPage, null), document.getElementById('body'));
+	React.render(React.createElement(FullPage, { page: 3 }), document.getElementById('body'));
 
 /***/ },
 /* 1 */
@@ -18197,48 +18197,47 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(158);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(160)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/sass-loader/index.js!./normalize.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/sass-loader/index.js!./normalize.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(159)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*--normalize--*/\n*,\n*:before,\n*:after {\n  box-sizing: border-box; }\n\nhtml {\n  overflow-y: hidden;\n  font-family: \"Segoe UI\", \"Lucida Grande\", Helvetica, Arial, \"Microsoft YaHei\", sans-serif;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%; }\n\nbody {\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.42857143; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n[hidden],\ntemplate {\n  display: none; }\n\na {\n  text-decoration: none;\n  background-color: transparent; }\n\na:hover {\n  outline: 0;\n  text-decoration: none; }\n\na:focus {\n  outline: none;\n  text-decoration: none; }\n\na:active {\n  outline: 0; }\n\np {\n  margin: 0 0 10px 0; }\n\nabbr[title] {\n  border-bottom: 1px dotted; }\n\nb,\nstrong {\n  font-weight: bold; }\n\ndfn {\n  font-style: italic; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: normal; }\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none; }\n\nmark {\n  background: #ff0;\n  color: #000; }\n\nsmall {\n  font-size: 80%; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\nimg {\n  border: 0; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\nfigure {\n  margin: 1em 40px; }\n\nhr {\n  box-sizing: content-box;\n  height: 0; }\n\npre {\n  overflow-x: hidden;\n  overflow-y: auto; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  font: inherit;\n  margin: 0; }\n\nbutton {\n  overflow: visible; }\n\nbutton:focus {\n  outline: none !important; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer; }\n\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\nbutton,\ninput[type=\"button\"],\ninput[type=\"submit\"] {\n  border: none; }\n\ninput[type=\"submit\"]:focus {\n  outline: none; }\n\ninput {\n  line-height: normal; }\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0; }\n\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box; }\n\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\nlegend {\n  border: 0;\n  padding: 0; }\n\ntextarea {\n  overflow: auto; }\n\noptgroup {\n  font-weight: bold; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n/*--some common class--*/\n.clearfix:before,\n.clearfix:after {\n  content: \" \";\n  display: table; }\n\n.clearfix:after {\n  clear: both; }\n\n.form-control {\n  display: block;\n  color: #666;\n  width: 100%;\n  height: 34px;\n  font-size: 14px;\n  padding: 6px 12px;\n  border-radius: 2px;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  -webkit-transition: all 0.2s ease-in-out;\n          transition: all 0.2s ease-in-out; }\n  .form-control:focus {\n    outline: 0;\n    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(59, 180, 242, 0.3); }\n\n.nowrap {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.container {\n  width: 1000px;\n  margin-left: auto;\n  margin-right: auto; }\n\n.no-select {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 159 */
 /***/ function(module, exports) {
 
 	/*
@@ -18293,7 +18292,7 @@
 	};
 
 /***/ },
-/* 199 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -18518,12 +18517,7 @@
 
 
 /***/ },
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18531,44 +18525,124 @@
 	var React = __webpack_require__(1);
 
 	//style
-	__webpack_require__(206);
+	__webpack_require__(162);
 
+	//单页组件
 	var Page = React.createClass({
 	    displayName: 'Page',
 
+	    style: {
+	        position: "absolute",
+	        width: "100%",
+	        overflow: "hidden",
+	        transition: "all .4s ease-in-out",
+	        WebkitTransition: "all .4s ease-in-out"
+	    },
 	    render: function render() {
-	        //style
 	        var height = window.innerHeight;
-	        var style = {
-	            position: "absolute",
-	            width: "100%",
-	            height: height,
-	            overflow: "hidden",
-	            top: (this.props.page - this.props.nowPage) * height,
-	            background: this.props.background,
-	            transition: "all .2s ease-in-out"
-	        };
+	        var transform = "translate3d(0, " + (this.props.page - this.props.nowPage) * height + "px, 0)";
+	        this.style.height = height;
+	        this.style.transform = transform;
+	        this.style.WebkitTransform = transform;
+	        this.style.background = this.props.background;
 
 	        return React.createElement(
 	            'section',
-	            { className: 'page', style: style },
+	            { className: 'page', style: this.style },
 	            this.props.children
 	        );
 	    }
 	});
 
+	//获取当前时间
+	var _now = Date.now || function () {
+	    return new Date().getTime();
+	};
+
+	//函数节流
+	var _throttle = function _throttle(func, wait, options) {
+	    var context, args, result;
+	    var timeout = null;
+	    var previous = 0;
+	    if (!options) options = {};
+	    var later = function later() {
+	        previous = options.leading === false ? 0 : _now();
+	        timeout = null;
+	        result = func.apply(context, args);
+	        if (!timeout) context = args = null;
+	    };
+	    return function () {
+	        var now = _now();
+	        if (!previous && options.leading === false) previous = now;
+	        var remaining = wait - (now - previous);
+	        context = this;
+	        args = arguments;
+	        if (remaining <= 0 || remaining > wait) {
+	            if (timeout) {
+	                clearTimeout(timeout);
+	                timeout = null;
+	            }
+	            previous = now;
+	            result = func.apply(context, args);
+	            if (!timeout) context = args = null;
+	        } else if (!timeout && options.trailing !== false) {
+	            timeout = setTimeout(later, remaining);
+	        }
+	        return result;
+	    };
+	};
+
+	//函数去抖
+	var _debounce = function _debounce(func, wait, immediate) {
+	    var timeout, args, context, timestamp, result;
+	    var later = function later() {
+	        var last = _now() - timestamp;
+	        if (last < wait && last >= 0) {
+	            timeout = setTimeout(later, wait - last);
+	        } else {
+	            timeout = null;
+	            if (!immediate) {
+	                result = func.apply(context, args);
+	                if (!timeout) context = args = null;
+	            }
+	        }
+	    };
+	    return function () {
+	        context = this;
+	        args = arguments;
+	        timestamp = _now();
+	        var callNow = immediate && !timeout;
+	        if (!timeout) timeout = setTimeout(later, wait);
+	        if (callNow) {
+	            result = func.apply(context, args);
+	            context = args = null;
+	        }
+	        return result;
+	    };
+	};
+
+	//全屏滚动组件
 	var FullPage = React.createClass({
 	    displayName: 'FullPage',
 
 	    getInitialState: function getInitialState() {
+
+	        //滚轮防抖
+	        var wheel = (function (event) {
+	            event.deltaY < 0 ? this.pageUp() : this.pageDown();
+	        }).bind(this);
+	        var debounceWheel = _debounce(wheel, 50);
+
 	        return {
-	            nowPage: 1
+	            nowPage: 1,
+	            debounceWheel: debounceWheel
 	        };
 	    },
 	    componentDidMount: function componentDidMount() {
 	        //适应屏幕变化
+	        var debounceResize = _debounce(this.handleResize, 100);
 	        window.addEventListener('resize', (function () {
-	            this.forceUpdate();
+	            debounceResize();
 	        }).bind(this));
 
 	        //响应键盘事件
@@ -18576,14 +18650,23 @@
 	            this.handleKeyDown();
 	        }).bind(this);
 	    },
+	    //处理鼠标滚轮事件
+	    handleMouseWheel: function handleMouseWheel() {
+	        this.state.debounceWheel(event);
+	    },
+	    //处理屏幕变化时间
+	    handleResize: function handleResize() {
+	        this.forceUpdate();
+	    },
+	    //处理键盘事件
 	    handleKeyDown: function handleKeyDown() {
-
 	        switch (event.keyCode) {
 	            case 33: //page up
 	            case 38:
 	                //arrow up
 	                this.pageUp();
 	                break;
+	            case 32: //space
 	            case 34: //page down
 	            case 40:
 	                //arrow down
@@ -18591,23 +18674,20 @@
 	                break;
 	        }
 	    },
+	    //向上翻页
 	    pageUp: function pageUp() {
 	        var nowPage = this.state.nowPage;
-	        if (nowPage > 1) {
-	            this.setState({ nowPage: nowPage - 1 });
-	        }
+	        nowPage > 1 && this.setState({ nowPage: nowPage - 1 });
 	    },
+	    //向下翻页
 	    pageDown: function pageDown() {
 	        var nowPage = this.state.nowPage;
-	        if (nowPage < 3) {
-	            this.setState({ nowPage: nowPage + 1 });
-	        }
+	        nowPage < this.props.page && this.setState({ nowPage: nowPage + 1 });
 	    },
 	    render: function render() {
-
 	        return React.createElement(
 	            'div',
-	            null,
+	            { onWheel: this.handleMouseWheel },
 	            React.createElement(
 	                Page,
 	                { page: 1,
@@ -18648,16 +18728,16 @@
 	module.exports = FullPage;
 
 /***/ },
-/* 206 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(207);
+	var content = __webpack_require__(163);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(199)(content, {});
+	var update = __webpack_require__(160)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -18674,55 +18754,15 @@
 	}
 
 /***/ },
-/* 207 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(198)();
+	exports = module.exports = __webpack_require__(159)();
 	// imports
 
 
 	// module
 	exports.push([module.id, ".page h1 {\n  position: absolute;\n  top: 50%;\n  width: 100%;\n  color: #fff;\n  font-size: 32px;\n  margin-top: -20px;\n  line-height: 40px;\n  text-align: center; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(209);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(199)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/sass-loader/index.js!./normalize.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/sass-loader/index.js!./normalize.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(198)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "/*--normalize--*/\n*,\n*:before,\n*:after {\n  box-sizing: border-box; }\n\nhtml {\n  overflow-y: hidden;\n  font-family: \"Segoe UI\", \"Lucida Grande\", Helvetica, Arial, \"Microsoft YaHei\", sans-serif;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%; }\n\nbody {\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.42857143; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n[hidden],\ntemplate {\n  display: none; }\n\na {\n  text-decoration: none;\n  background-color: transparent; }\n\na:hover {\n  outline: 0;\n  text-decoration: none; }\n\na:focus {\n  outline: none;\n  text-decoration: none; }\n\na:active {\n  outline: 0; }\n\np {\n  margin: 0 0 10px 0; }\n\nabbr[title] {\n  border-bottom: 1px dotted; }\n\nb,\nstrong {\n  font-weight: bold; }\n\ndfn {\n  font-style: italic; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: normal; }\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none; }\n\nmark {\n  background: #ff0;\n  color: #000; }\n\nsmall {\n  font-size: 80%; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\nimg {\n  border: 0; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\nfigure {\n  margin: 1em 40px; }\n\nhr {\n  box-sizing: content-box;\n  height: 0; }\n\npre {\n  overflow-x: hidden;\n  overflow-y: auto; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  font: inherit;\n  margin: 0; }\n\nbutton {\n  overflow: visible; }\n\nbutton:focus {\n  outline: none !important; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer; }\n\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\nbutton,\ninput[type=\"button\"],\ninput[type=\"submit\"] {\n  border: none; }\n\ninput[type=\"submit\"]:focus {\n  outline: none; }\n\ninput {\n  line-height: normal; }\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0; }\n\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box; }\n\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\nlegend {\n  border: 0;\n  padding: 0; }\n\ntextarea {\n  overflow: auto; }\n\noptgroup {\n  font-weight: bold; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n/*--some common class--*/\n.clearfix:before,\n.clearfix:after {\n  content: \" \";\n  display: table; }\n\n.clearfix:after {\n  clear: both; }\n\n.form-control {\n  display: block;\n  color: #666;\n  width: 100%;\n  height: 34px;\n  font-size: 14px;\n  padding: 6px 12px;\n  border-radius: 2px;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  -webkit-transition: all 0.2s ease-in-out;\n          transition: all 0.2s ease-in-out; }\n  .form-control:focus {\n    outline: 0;\n    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(59, 180, 242, 0.3); }\n\n.nowrap {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.container {\n  width: 1000px;\n  margin-left: auto;\n  margin-right: auto; }\n\n.no-select {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n", ""]);
 
 	// exports
 

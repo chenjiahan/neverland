@@ -9,6 +9,6 @@ var FullPage = require('./full-page');
 
 //render
 React.render(
-    <FullPage />,
+    <FullPage page={3}/>,
     document.getElementById('body')
 );
